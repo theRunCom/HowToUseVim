@@ -57,7 +57,7 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
     }
     ```
 
-<img src="./pics/Makeit.jpg" alt="MakeIt" />
+<img src="./pics/MakeIt.jpg" alt="MakeIt" />
 
 - 浏览文件，file-browser.lua:
 

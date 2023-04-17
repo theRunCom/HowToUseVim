@@ -4,17 +4,19 @@
 
 ## LazyVim🤔
 
+[LazyVim官方网站](https://www.lazyvim.org/)
+
 LazyVim是一套Neovim配置，由lazy.nvim驱动，可以轻松自定义和扩展您的配置。LazyVim提供了两全其美的方式 - 根据需要调整配置的灵活性，以及默认预配置的便利性。它可以将您的Neovim转换为一个完整的IDE，具有易于自定义和扩展的配置，以及合理的默认设置。LazyVim还提供了许多预配置的插件，可立即使用!
 
 <img src="./pics/lazyvim.png" alt="lazyvim_preview">
-
-[LazyVim官方网站](https://www.lazyvim.org/)
 
 LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在一起，使得它既具备强大的编辑和编程功能，同时也具备交互体验和开发效率。因此，使用 LazyVim 可以让你更加高效地完成编程工作，并且能够享受使用 Vim 带来的编辑效率和快乐。
 
 ## ⌨️ 快捷键
 
+[KeyMaps](https://www.lazyvim.org/keymaps)
 
+## ⚙️ 相关配置
 
 Lazy is an amazing package for neovim. It has auto-lazy-loading. auto installation of missing plugins, an amazing UI, and other awesome features!
 

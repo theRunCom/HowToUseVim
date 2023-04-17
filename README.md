@@ -12,6 +12,14 @@ lazy.nvim的便利 UI
 
 https://www.youtube.com/watch?v=6vBKe2mI_9c
 
+LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在一起，使得它既具备强大的编辑和编程功能，同时也具备交互体验和开发效率。因此，使用 LazyVim 可以让你更加高效地完成编程工作，并且能够享受使用 Vim 带来的编辑效率和快乐。
+
+
+https://zhuanlan.zhihu.com/p/608322089
+
+来替换掉你的vim，打造堪比IDE的编辑工具
+
+https://www.githubs.cn/projects/583706111-lazyvim
 
 - tmux
 

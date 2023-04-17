@@ -22,24 +22,41 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
 
 在 .config/nvim/lua/plugins/ 新加 xxx.lua，格式参考 example.lua
 
-- 修改主题，gruvbox.lua
+- 修改主题，tokyonight.lua:
 
     ```lua
     return {
-    -- add gruvbox
-    { "ellisonleao/gruvbox.nvim" },
-
-    -- Configure LazyVim to load gruvbox
     {
-        "LazyVim/LazyVim",
+        "folke/tokyonight.nvim",
+        lazy = true,
         opts = {
-        colorscheme = "gruvbox",
+        colorscheme = "tokyonight",
+        style = "storm",
         },
     },
-    }
+    } 
     ```
 
+- 更改开始面板logo，alpha.lua:
 
+    ```lua
+    return {
+        "goolord/alpha-nvim",
+        opts = function(_, opts)
+            local logo = [[
+            _____          __            .______________
+        /     \ _____  |  | __ ____   |   \__    ___/
+        /  \ /  \\__  \ |  |/ // __ \  |   | |    |   
+        /    Y    \/ __ \|    <\  ___/  |   | |    |   
+        \____|__  (____  /__|_ \\___  > |___| |____|   
+                \/     \/     \/    \/                 
+                       [ @theRunCom ]
+            ]]
+            opts.section.header.val = vim.split(logo, "\n", { trimempty = true })
+        end,
+    }
+
+    ```
 
 
 

@@ -42,16 +42,6 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
 
 
 
-Lazy is an amazing package for neovim. It has auto-lazy-loading. auto installation of missing plugins, an amazing UI, and other awesome features!
-
-packer 其使用的方式
-
-lazy.nvim的便利 UI
-
-https://www.youtube.com/watch?v=6vBKe2mI_9c
-
-
-https://zhuanlan.zhihu.com/p/608322089
 
 
 
@@ -63,11 +53,7 @@ https://zhuanlan.zhihu.com/p/608322089
 
 1. 运行`:checkhealth`
 
-2. 进入配置目录.config/nvim
-
-3. mason面板上的图标不见了
-
-4. 
+ 
 
 0:00 Introduction
 0:24 LazyVim Installation

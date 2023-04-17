@@ -18,6 +18,30 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
 
 ## ⚙️ 相关配置
 
+### 1. 添加插件
+
+在 .config/nvim/lua/plugins/ 新加 xxx.lua，格式参考 example.lua
+
+- 修改主题，gruvbox.lua
+
+    ```lua
+    return {
+    -- add gruvbox
+    { "ellisonleao/gruvbox.nvim" },
+
+    -- Configure LazyVim to load gruvbox
+    {
+        "LazyVim/LazyVim",
+        opts = {
+        colorscheme = "gruvbox",
+        },
+    },
+    }
+    ```
+
+
+
+
 Lazy is an amazing package for neovim. It has auto-lazy-loading. auto installation of missing plugins, an amazing UI, and other awesome features!
 
 packer 其使用的方式

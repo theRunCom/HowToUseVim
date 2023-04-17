@@ -79,6 +79,115 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
 
 <img src="./pics/file-browser.jpg" alt="file-browser" />
 
+- 终端，toggleterm.lua:
+
+    ```lua
+    return {
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        opts = {
+        size = 20,
+        open_mapping = [[<c-\>]],
+        hide_numbers = true,
+        shade_terminals = true,
+        shading_factor = 2,
+        start_in_insert = true,
+        insert_mappings = true,
+        persist_size = true,
+        direction = "float",
+        close_on_exit = true,
+        shell = vim.o.shell,
+        float_opts = {
+            border = "curved",
+        },
+        },
+        keys = {
+        {
+            "<c-\\>",
+            desc = "Toggle term",
+        },
+        },
+    },
+    }
+    ```
+
+- 代码片段扩展和自动完成，luasnip.lua:
+
+    ```lua
+    return {
+    {
+    "L3MON4D3/LuaSnip",
+    build = (not jit.os:find("Windows"))
+        and "echo -e 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
+        or nil,
+    dependencies = {
+        "rafamadriz/friendly-snippets",
+        config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+    },
+    opts = {
+        history = true,
+        delete_check_events = "TextChanged",
+    },
+    -- stylua: ignore
+    keys = {
+        {
+        "<tab>",
+        function()
+            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+        end,
+        expr = true, silent = true, mode = "i",
+        },
+        { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
+        { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+    },
+    }
+    }
+    ```
+
+- tree-sitter插件是基于tree-sitter的插件，可以为多种编辑器提供语法高亮、代码折叠、自动补全等功能，treesitter.lua:
+
+
+
+- Tailwind CSS 相关支持，tailwind.lua:
+
+    ```lua
+    return {
+    {
+        "neovim/nvim-lspconfig",
+        opts = {
+        servers = {
+            tailwindcss = {},
+        },
+        },
+    },
+    {
+        "NvChad/nvim-colorizer.lua",
+        opts = {
+        user_default_options = {
+            tailwind = true,
+        },
+        },
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+        { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+        },
+        opts = function(_, opts)
+        -- original LazyVim kind icon formatter
+        local format_kinds = opts.formatting.format
+        opts.formatting.format = function(entry, item)
+            format_kinds(entry, item) -- add icons
+            return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        end
+        end,
+    },
+    }
+    ```
+
 ## Tips🔐
 
 [vim原生快捷键](https://devhints.io/vim)

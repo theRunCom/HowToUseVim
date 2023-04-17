@@ -112,44 +112,71 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
     }
     ```
 
-- 代码片段扩展和自动完成，luasnip.lua:
-
-    ```lua
-    return {
-    {
-    "L3MON4D3/LuaSnip",
-    build = (not jit.os:find("Windows"))
-        and "echo -e 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
-        or nil,
-    dependencies = {
-        "rafamadriz/friendly-snippets",
-        config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-    },
-    opts = {
-        history = true,
-        delete_check_events = "TextChanged",
-    },
-    -- stylua: ignore
-    keys = {
-        {
-        "<tab>",
-        function()
-            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-        end,
-        expr = true, silent = true, mode = "i",
-        },
-        { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-        { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    },
-    }
-    }
-    ```
-
 - tree-sitter插件是基于tree-sitter的插件，可以为多种编辑器提供语法高亮、代码折叠、自动补全等功能，treesitter.lua:
 
+```lua
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "regex",
+        "vim",
+        "lua",
+        "html",
+        "markdown",
+        "markdown_inline",
+        "css",
+        "typescript",
+        "tsx",
+        "javascript",
+        "json",
+        "json5",
+        "jsonc",
+        "graphql",
+        "prisma",
+        "rust",
+        "go",
+        "toml",
+        "c",
+        "cpp",
+        "clojure",
+        "dart",
+        "dockerfile",
+        "scss",
+        "swift",
+        "toml",
+        "verilog",
+        "vue",
+        "zig",
+        "proto",
+        "svelte",
+        "solidity",
+      },
+      auto_install = true,
+      -- ensure_installed = "all", -- one of "all" or a list of languages
+      ignore_install = { "" }, -- List of parsers to ignore installing
+      sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 
+      highlight = {
+        enable = true, -- false will disable the whole extension
+        disable = { "css" }, -- list of language that will be disabled
+      },
+      autopairs = {
+        enable = true,
+      },
+      indent = { enable = true, disable = { "python", "css" } },
+
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+    },
+  },
+}
+
+```
 
 - Tailwind CSS 相关支持，tailwind.lua:
 

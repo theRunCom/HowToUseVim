@@ -8,7 +8,7 @@
 
 LazyVim是一套Neovim配置，由lazy.nvim驱动，可以轻松自定义和扩展您的配置。LazyVim提供了两全其美的方式 - 根据需要调整配置的灵活性，以及默认预配置的便利性。它可以将您的Neovim转换为一个完整的IDE，具有易于自定义和扩展的配置，以及合理的默认设置。LazyVim还提供了许多预配置的插件，可立即使用!
 
-<img src="./pics/lazyvim.png" alt="lazyvim_preview">
+<img src="./pics/lazyvim.png" alt="lazyvim_preview" />
 
 LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在一起，使得它既具备强大的编辑和编程功能，同时也具备交互体验和开发效率。因此，使用 LazyVim 可以让你更加高效地完成编程工作，并且能够享受使用 Vim 带来的编辑效率和快乐。
 
@@ -55,12 +55,29 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
             opts.section.header.val = vim.split(logo, "\n", { trimempty = true })
         end,
     }
-
     ```
 
+<img src="./pics/Makeit.jpg" alt="MakeIt" />
 
+- 浏览文件，file-browser.lua:
 
+    ```lua
+    return {
+        "nvim-telescope/telescope-file-browser.nvim",
+        keys = {
+            {
+            "<leader>sB",
+            ":Telescope file_browser path=%:p:h=%:p:h<cr>",
+            desc = "Browse Files",
+            },
+        },
+        config = function()
+            require("telescope").load_extension("file_browser")
+        end,
+    }
+    ```
 
+<img src="./pics/file-browser.jpg" alt="file-browser" />
 
 ## Tips🔐
 

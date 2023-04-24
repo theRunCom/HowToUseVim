@@ -16,6 +16,8 @@ LazyVim 的出现可以说是将主流 IDE 和 Vim 的优点有机地结合在�
 
 [KeyMaps](https://www.lazyvim.org/keymaps)
 
+[vim命令使用总结](https://www.bilibili.com/read/cv22398023)
+
 ## ⚙️ 相关配置
 
 ### 1. 添加插件
